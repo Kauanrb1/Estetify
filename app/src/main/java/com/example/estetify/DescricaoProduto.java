@@ -1,5 +1,6 @@
 package com.example.estetify;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,16 +23,23 @@ public class DescricaoProduto extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        KauanRibeiro.Produto produto = (KauanRibeiro.Produto) getIntent().getSerializableExtra("produto");
+        ImageView productImage = findViewById(R.id.productImage);
+        TextView productName = findViewById(R.id.productName);
+        TextView productPrice = findViewById(R.id.productPrice);
+        TextView productDescription = findViewById(R.id.productDescription);
 
-        if (produto != null) {
-            ImageView imagem = findViewById(R.id.imagemProduto);
-            TextView nome = findViewById(R.id.nomeProduto);
-            TextView valor = findViewById(R.id.valorProduto);
+        // Receber os dados passados pela Intent
+        Intent intent = getIntent();
+        int imageResId = intent.getIntExtra("imageResId", 0);
+        String name = intent.getStringExtra("name");
+        String price = intent.getStringExtra("price");
+        String description = intent.getStringExtra("description");
 
-            imagem.setImageResource(produto.getImagem());
-            nome.setText(produto.getNome());
-            valor.setText(produto.getValor());
-        }
+        // Configurar os dados na tela
+        productImage.setImageResource(imageResId);
+        productName.setText(name);
+        productPrice.setText(price);
+        productDescription.setText(description);
+
     }
 }

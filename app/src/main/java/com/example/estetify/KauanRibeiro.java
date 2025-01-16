@@ -19,7 +19,7 @@ public class KauanRibeiro extends AppCompatActivity {
 
     private boolean corDiferente = false;
     private Button geral, produtos, servicos;
-    private ImageView postImage, postImage1, postImage2, postImage3, postImage4;
+    private ImageView postImage, postImage1, postImage2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class KauanRibeiro extends AppCompatActivity {
 
         Drawable transparenteborda = getResources().getDrawable(R.drawable.button_transparente_borda);
         Drawable coralterada = getResources().getDrawable(R.drawable.cor_alterada);
+
         geral.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,13 +70,17 @@ public class KauanRibeiro extends AppCompatActivity {
                 corDiferente = !corDiferente;
             }
         });
-        postImage.setOnClickListener(view ->{
+        postImage.setOnClickListener(v -> openProductDetail(
+                R.drawable.pomada, "Pomada", "R$ 15,00", "Pomada de alta qualidade para modelar cabelos."
+        ));
 
-            Produto produto = new Produto("Pomada", "R$ 15,00", R.drawable.pomada);
-            Intent intent = new Intent(KauanRibeiro.this, DescricaoProduto.class);
-            intent.putExtra("Produto", produto);
-            startActivity(intent);
-        });
+        postImage1.setOnClickListener(v -> openProductDetail(
+                R.drawable.pomadadapper, "Creme", "R$ 12,00", "Creme hidratante para todos os tipos de pele."
+        ));
+
+        postImage2.setOnClickListener(v -> openProductDetail(
+                R.drawable.oleobarba, "Óleo", "R$ 18,00", "Óleo para barba com fragrância natural."
+        ));
     }
     private void IniciarComponentes() {
     geral = findViewById(R.id.Geral);
@@ -84,8 +89,14 @@ public class KauanRibeiro extends AppCompatActivity {
     postImage = findViewById(R.id.postImage);
     postImage1 = findViewById(R.id.postImage1);
     postImage2 = findViewById(R.id.postImage2);
-    postImage3 = findViewById(R.id.postImage3);
-    postImage4 = findViewById(R.id.postImage4);
+    }
+    private void openProductDetail(int imageResId, String name, String price, String description) {
+        Intent intent = new Intent(this, DescricaoProduto.class);
+        intent.putExtra("imageResId", imageResId);
+        intent.putExtra("name", name);
+        intent.putExtra("price", price);
+        intent.putExtra("description", description);
+        startActivity(intent);
     }
 
     public class Produto implements Serializable {

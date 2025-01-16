@@ -160,6 +160,7 @@
                     android:scaleType="centerCrop"
                     android:src="@drawable/pomada" />
 
+
                 <TextView
                     android:id="@+id/pomada"
                     android:layout_width="wrap_content"
