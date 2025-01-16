@@ -23,15 +23,17 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
-public class Perfil extends AppCompatActivity {
+public class Perfil extends BaseActivity {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private TextView NomeUsuario, textEmailUsuario, permission, preferencia;
-    private ImageView voltar,opitions, perfil, pesquisa, localizacao, home, notificacoes;
+    private ImageView voltar,opitions;
 
     private Button bt_deslogar;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     String usuarioID;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +46,10 @@ public class Perfil extends AppCompatActivity {
             return insets;
         });
 
+        setupBottomNavigation();
+        updateBottomNavigationSelection(R.id.perfil);
         IniciarComponentes();
-    bt_deslogar.setOnClickListener(new View.OnClickListener() {
+        bt_deslogar.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 
@@ -90,39 +94,6 @@ public class Perfil extends AppCompatActivity {
                 finish();
             }
         });
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Perfil.this, TelaPrincipal.class);
-                startActivity(intent);
-                finish();
-            }
-
-        });
-
-        notificacoes.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Perfil.this, Notificacao.class);
-                startActivity(intent);
-            }
-        });
-        pesquisa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Perfil.this, Pesquisa.class);
-                startActivity(intent);
-            }
-        });
-        localizacao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Perfil.this, Localizacao.class);
-                startActivity(intent);
-            }
-        });
-
 
     }
 
@@ -157,17 +128,12 @@ public class Perfil extends AppCompatActivity {
         opitions = findViewById(R.id.opitions);
         permission = findViewById(R.id.Permission);
         preferencia = findViewById(R.id.Preferencia);
-        perfil = findViewById(R.id.Perfil);
-        pesquisa = findViewById(R.id.pesquisa);
-        localizacao = findViewById(R.id.localizacao);
-        home = findViewById(R.id.home);
-        notificacoes = findViewById(R.id.notificacoes);
+
     }
 
 
     public void deslogar(View view) {
     }
 
-    public void Perfil(View view) {
-    }
+
 }

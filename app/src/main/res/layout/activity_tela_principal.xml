@@ -9,7 +9,7 @@
     tools:context=".TelaPrincipal">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Geral"
+        android:id="@+id/geral"
         android:layout_width="100dp"
         android:layout_height="45dp"
         android:background="@drawable/button_transparente_borda"
@@ -25,7 +25,7 @@
         app:layout_constraintVertical_bias="0.04" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Produtos"
+        android:id="@+id/produtos"
         android:layout_width="100dp"
         android:layout_height="45dp"
         android:background="@drawable/button_transparente_borda"
@@ -41,11 +41,11 @@
         app:layout_constraintVertical_bias="0.04" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Serviços"
+        android:id="@+id/servicos"
         android:layout_width="100dp"
         android:layout_height="45dp"
         android:background="@drawable/button_transparente_borda"
-        android:onClick="Serviços"
+        android:onClick="Servicos"
         android:text="Serviços"
         android:textColor="@color/black"
         android:textColorLink="#020202"
@@ -255,68 +255,19 @@
         </LinearLayout>
     </ScrollView>
 
-    <ImageView
-        android:id="@+id/Perfil"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/perfil"
-        android:onClick="Perfil"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.900"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.980"
-        />
 
-    <ImageView
-        android:id="@+id/pesquisa"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/pesquisa"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="85.333dp"
+        android:background="#6200EE"
+        app:menu="@menu/barra_navegacao"
+        app:labelVisibilityMode="labeled"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.980"
-        />
-    <ImageView
-        android:id="@+id/localizacao"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/localizacao"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.100"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.980"
-        />
-    <ImageView
-        android:id="@+id/home"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.300"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.980"
-        />
-    <ImageView
-        android:id="@+id/notificacoes"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/baseline_notifications_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.700"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.980"
-        />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
