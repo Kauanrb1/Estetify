@@ -18,10 +18,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class TelaPrincipal extends AppCompatActivity {
+public class TelaPrincipal extends BaseActivity {
     private TextView kauan;
-    private ImageView perfil, pesquisa, home, localizacao, notificacoes;
-    private Button geral, produtos, serviços;
+    private Button geral, produtos, servicos;
     private boolean corDiferente = false;
 
     @Override
@@ -33,23 +32,22 @@ public class TelaPrincipal extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-            });
+        });
 
-            IniciarComponentes();
+        geral = findViewById(R.id.geral);
+        produtos = findViewById(R.id.produtos);
+        servicos = findViewById(R.id.servicos);
+        kauan = findViewById(R.id.kauan);
 
-            perfil.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(TelaPrincipal.this, Perfil.class);
-                    startActivity(intent);
-                }
-            });
+        setupBottomNavigation();
+        updateBottomNavigationSelection(R.id.home);
+
         Drawable transparenteborda = getResources().getDrawable(R.drawable.button_transparente_borda);
         Drawable coralterada = getResources().getDrawable(R.drawable.cor_alterada);
         geral.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(corDiferente){
+                if (corDiferente) {
                     geral.setBackground(transparenteborda);
                 } else {
                     geral.setBackground(coralterada);
@@ -61,7 +59,7 @@ public class TelaPrincipal extends AppCompatActivity {
         produtos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(corDiferente){
+                if (corDiferente) {
                     produtos.setBackground(transparenteborda);
                 } else {
                     produtos.setBackground(coralterada);
@@ -69,57 +67,18 @@ public class TelaPrincipal extends AppCompatActivity {
                 corDiferente = !corDiferente;
             }
         });
-        serviços.setOnClickListener(new View.OnClickListener() {
+        servicos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(corDiferente){
-                    serviços.setBackground(transparenteborda);
+                if (corDiferente) {
+                    servicos.setBackground(transparenteborda);
                 } else {
-                    serviços.setBackground(coralterada);
+                    servicos.setBackground(coralterada);
                 }
                 corDiferente = !corDiferente;
             }
         });
-        pesquisa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(TelaPrincipal.this, Pesquisa.class);
-                startActivity(intent);
-            }
-        });
 
-        perfil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TelaPrincipal.this, Perfil.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TelaPrincipal.this, TelaPrincipal.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-        notificacoes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TelaPrincipal.this, Notificacao.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-        localizacao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TelaPrincipal.this, Localizacao.class);
-                startActivity(intent);
-                finish();
-            }
-        });
         kauan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,28 +87,18 @@ public class TelaPrincipal extends AppCompatActivity {
             }
         });
 
-    }
-private void IniciarComponentes() {
-        perfil = findViewById(R.id.Perfil);
-        geral = findViewById(R.id.Geral);
-        produtos = findViewById(R.id.Produtos);
-        serviços = findViewById(R.id.Serviços);
-        pesquisa = findViewById(R.id.pesquisa);
-        home = findViewById(R.id.home);
-        localizacao = findViewById(R.id.localizacao);
-        notificacoes = findViewById(R.id.notificacoes);
-        kauan = findViewById(R.id.kauan);
 
-}
+
+    }
+
     public void Geral(View view) {
     }
 
     public void Produtos(View view) {
     }
 
-    public void Serviços(View view) {
+    public void Servicos(View view) {
     }
 
-    public void Perfil(View view) {
-    }
+
 }

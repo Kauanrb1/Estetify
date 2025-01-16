@@ -8,7 +8,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class Pesquisa extends AppCompatActivity {
+public class Pesquisa extends  BaseActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +20,8 @@ public class Pesquisa extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        setupBottomNavigation();
+        updateBottomNavigationSelection(R.id.cart);
     }
 }
