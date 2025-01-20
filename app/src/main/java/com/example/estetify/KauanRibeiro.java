@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,7 @@ public class KauanRibeiro extends AppCompatActivity {
     private boolean corDiferente = false;
     private Button geral, produtos, servicos;
     private ImageView postImage, postImage1, postImage2;
+    private RatingBar ratingBarProduto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,15 +73,15 @@ public class KauanRibeiro extends AppCompatActivity {
             }
         });
         postImage.setOnClickListener(v -> openProductDetail(
-                R.drawable.pomada, "Pomada", "R$ 15,00", "Pomada de alta qualidade para modelar cabelos."
+                R.drawable.pomada, "Pomada", "R$ 15,00", "Pomada de alta qualidade para modelar cabelos.", 4.5f
         ));
 
         postImage1.setOnClickListener(v -> openProductDetail(
-                R.drawable.pomadadapper, "Creme", "R$ 12,00", "Creme hidratante para todos os tipos de pele."
+                R.drawable.pomadadapper, "Creme", "R$ 12,00", "Creme hidratante para todos os tipos de pele.", 4.0f
         ));
 
         postImage2.setOnClickListener(v -> openProductDetail(
-                R.drawable.oleobarba, "Óleo", "R$ 18,00", "Óleo para barba com fragrância natural."
+                R.drawable.oleobarba, "Óleo", "R$ 18,00", "Óleo para barba com fragrância natural.", 2.5f
         ));
     }
     private void IniciarComponentes() {
@@ -89,25 +91,29 @@ public class KauanRibeiro extends AppCompatActivity {
     postImage = findViewById(R.id.postImage);
     postImage1 = findViewById(R.id.postImage1);
     postImage2 = findViewById(R.id.postImage2);
+    ratingBarProduto = findViewById(R.id.ratingBarProduto);
     }
-    private void openProductDetail(int imageResId, String name, String price, String description) {
+    private void openProductDetail(int imageResId, String name, String price, String description, float rating) {
         Intent intent = new Intent(this, DescricaoProduto.class);
         intent.putExtra("imageResId", imageResId);
         intent.putExtra("name", name);
         intent.putExtra("price", price);
         intent.putExtra("description", description);
+        intent.putExtra("ratingBarProduto", rating);
         startActivity(intent);
     }
 
     public class Produto implements Serializable {
         private String nome, valor, descricao;
         private int imagem;
+        private float avaliacao;
 
-        public Produto(String nome, String valor, String descricao, int imagem) {
+        public Produto(String nome, String valor, String descricao, int imagem, float avaliacao) {
             this.nome = nome;
             this.valor = valor;
             this.imagem = imagem;
             this.descricao = descricao;
+            this.avaliacao = avaliacao;
         }
 
         public Produto(String pomada, String valor, int pomada1) {
@@ -130,6 +136,21 @@ public class KauanRibeiro extends AppCompatActivity {
         public String getDescricao() {
 
             return descricao;
+        }
+        public float getAvaliacao() {
+
+            return avaliacao;
+        }
+        public void setAvaliacao(float avaliacao) {
+            this.avaliacao = avaliacao;
+        }
+
+        public boolean getPreco() {
+            return false;
+        }
+
+        public boolean getImagemUrl() {
+            return false;
         }
     }
     private void abrirDetalhesProduto(Produto produto) {

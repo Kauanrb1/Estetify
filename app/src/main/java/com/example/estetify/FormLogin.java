@@ -189,7 +189,6 @@ public class FormLogin extends AppCompatActivity {
                                 }
                             }
                         });
-                ;
             } catch (ApiException e) {
                 e.printStackTrace();
             }

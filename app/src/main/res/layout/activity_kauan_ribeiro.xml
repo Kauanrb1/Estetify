@@ -159,6 +159,32 @@
                     android:padding="5dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/pomada" />
+                <RatingBar
+                    android:id="@+id/ratingBarProduto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:numStars="5"
+                    android:stepSize="0.5"
+                    android:rating="0"
+                    android:visibility="gone" />
+                <RatingBar
+                    android:id="@+id/ratingBarProduto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:stepSize="0.5"
+                    android:rating="0"
+                    android:visibility="gone" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:stepSize="0.5"
+                    android:rating="4.0"
+                    android:visibility="gone"
+                    />
 
 
                 <TextView
@@ -195,6 +221,14 @@
                 android:padding="5dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/pomadadapper" />
+                <RatingBar
+                    android:id="@+id/ratingBarCreme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:stepSize="0.5"
+                    android:rating="0"
+                    android:visibility="gone" />
                 <TextView
                     android:id="@+id/creme"
                     android:layout_width="wrap_content"
@@ -215,6 +249,7 @@
                     android:textSize="16sp"
                     android:gravity="center" />
             </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -228,6 +263,14 @@
                 android:padding="5dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/oleobarba" />
+            <RatingBar
+                android:id="@+id/ratingBarOleo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="0.5"
+                android:rating="0"
+                android:visibility="gone" />
             <TextView
                 android:id="@+id/oleo"
                 android:layout_width="wrap_content"

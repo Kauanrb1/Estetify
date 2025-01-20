@@ -48,6 +48,14 @@
             android:layout_marginTop="70dp"
             android:fontFamily="@font/merriweathersans"/>
 
+        <RatingBar
+            android:id="@+id/ratingBarProduto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:isIndicator="true"/>
+
+
         <ImageView
             android:id="@+id/productImage"
             android:layout_width="match_parent"
@@ -76,6 +84,32 @@
             android:fontFamily="@font/sans"
             android:layout_marginTop="8dp" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/comprar"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:text="Comprar agora"
+        android:backgroundTint="@color/verdePastel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.750"
+        />
+    <Button
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:text="Adicionar ao carrinho"
+        android:backgroundTint="@color/verdePastel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.850"
+        />
 
 
 
