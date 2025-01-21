@@ -99,6 +99,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/text_entrar_com"
             android:layout_width="90dp"
             android:layout_height="20dp"
             android:fontFamily="@font/sans"
@@ -115,21 +116,17 @@
             app:layout_constraintVertical_bias="0.0"
             />
 
-        <ImageView
-            android:id="@+id/google"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="590dp"
-            android:src="@drawable/logo_google"
-            android:onClick="google"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.390"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            />
-
+        <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login_google"
+        android:background="@color/white"
+        android:drawableStart="@drawable/common_google_signin_btn_icon_light_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_google"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_entrar_com"
+        />
         <TextView
             android:id="@+id/text_tela_cadastro"
             android:layout_width="wrap_content"

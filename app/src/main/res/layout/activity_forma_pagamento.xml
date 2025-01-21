@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormaPagamento">
+
+    <ImageView
+        android:id="@+id/voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21.333dp"
+        android:layout_marginTop="42.667dp"
+        android:src="@drawable/voltar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+    <TextView
+        android:id="@+id/forma_de_pagamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Forma de Pagamento"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/voltar"
+        app:layout_constraintTop_toBottomOf="@id/voltar"></TextView>
+
+    <TextView
+        android:id="@+id/confirmacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:text="Confirmação"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/forma_de_pagamento"
+        app:layout_constraintTop_toBottomOf="@id/voltar"></TextView>
+
+    <TextView
+        android:id="@+id/efetuada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:text="Compra Efetuada"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/confirmacao"
+        app:layout_constraintTop_toBottomOf="@id/voltar"></TextView>
+
+    <ImageView
+        android:id="@+id/full_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.667dp"
+        android:src="@drawable/circulo_preenchido"
+        app:layout_constraintEnd_toEndOf="@id/forma_de_pagamento"
+        app:layout_constraintStart_toStartOf="@id/forma_de_pagamento"
+        app:layout_constraintTop_toBottomOf="@id/forma_de_pagamento"></ImageView>
+
+    <ImageView
+        android:id="@+id/empty_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.667dp"
+        android:src="@drawable/circulo"
+        app:layout_constraintEnd_toEndOf="@id/confirmacao"
+        app:layout_constraintStart_toStartOf="@id/confirmacao"
+        app:layout_constraintTop_toBottomOf="@id/confirmacao"></ImageView>
+
+    <ImageView
+        android:id="@+id/empty_circle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.667dp"
+        android:src="@drawable/circulo"
+
+        app:layout_constraintEnd_toEndOf="@id/efetuada"
+        app:layout_constraintStart_toStartOf="@id/efetuada"
+        app:layout_constraintTop_toBottomOf="@id/efetuada"></ImageView>
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16px"
+        android:layout_marginTop="48px"
+        android:layout_marginEnd="16px"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/full_circle">
+
+        <RadioButton
+            android:id="@+id/radio_pix"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_marginBottom="42.667dp"
+            android:background="@android:color/darker_gray"
+            android:text="Pix" />
+
+        <RadioButton
+            android:id="@+id/radio_boleto"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_marginBottom="42.667dp"
+            android:background="@android:color/darker_gray"
+            android:text="Boleto" />
+
+        <RadioButton
+            android:id="@+id/radio_credit_card"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_marginBottom="42.667dp"
+            android:background="@android:color/darker_gray"
+            android:text="Cartão de Crédito" />
+
+        <RadioButton
+            android:id="@+id/radio_debit_card"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:background="@android:color/darker_gray"
+            android:text="Cartão de Débito" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_continuar_pagamento"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:backgroundTint="@color/verdePastel"
+        android:text="Continuar Pagamento"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"></Button>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

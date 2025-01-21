@@ -13,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,12 +38,12 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 
 public class FormLogin extends AppCompatActivity {
-    private ImageView google;
     private GoogleSignInClient client;
     private TextView text_tela_cadastro;
     private EditText edit_email, edit_senha;
-    private Button entrar;
+    private Button entrar, btn_login_google;
     private ProgressBar progressbar;
+    private ActivityResultLauncher<Intent> signInLauncher;
 
     String[] mensagens = {"Preencha todos os campos!", "Login efetuado com sucesso!"};
 
@@ -84,19 +86,50 @@ public class FormLogin extends AppCompatActivity {
                 }
             }
         });
+
         GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
         client = GoogleSignIn.getClient(this, options);
-        google.setOnClickListener(new View.OnClickListener() {
+
+        btn_login_google.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = client.getSignInIntent();
                 startActivityForResult(i, 1234);
             }
         });
+
+        signInLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK) {
+                        Intent data = result.getData();
+                        Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+                        try {
+                            GoogleSignInAccount account = task.getResult(ApiException.class);
+                            AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
+                            FirebaseAuth.getInstance().signInWithCredential(credential)
+                                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<AuthResult> task) {
+                                            if (task.isSuccessful()) {
+                                                Intent intent = new Intent(getApplicationContext(), Perfil.class);
+                                                startActivity(intent);
+                                            } else {
+                                                Toast.makeText(FormLogin.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    });
+                        } catch (ApiException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+        );
+
     }
 
     private void AutenticarUsuario(View v) {
@@ -157,7 +190,7 @@ public class FormLogin extends AppCompatActivity {
         edit_senha = findViewById(R.id.edit_senha);
         entrar = findViewById(R.id.entrar);
         progressbar = findViewById(R.id.progressbar);
-        google = findViewById(R.id.google);
+        btn_login_google = findViewById(R.id.btn_login_google);
     }
 
     public void Entrar(View view) {

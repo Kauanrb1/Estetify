@@ -12,7 +12,20 @@
           "package_name": "com.example.estetify"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "735899522421-3tpuadkkfu1k11u2tv06h0eg8u40n7c3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.estetify",
+            "certificate_hash": "f8ad8c7784af6b3c62f208d48cea4ff6f1ca35b5"
+          }
+        },
+        {
+          "client_id": "735899522421-va672lg6j0mm643d1o04ar0smq0lpd85.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDpLyKfsRm1Mv-daJOFiQ3ZxbrwY3dxfrU"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "735899522421-va672lg6j0mm643d1o04ar0smq0lpd85.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
