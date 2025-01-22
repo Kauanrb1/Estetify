@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Estetify"
         tools:targetApi="31">
         <activity
+            android:name=".CompraEfetuada"
+            android:exported="false" />
+        <activity
             android:name=".FormaPagamento"
             android:exported="false" />
         <activity
