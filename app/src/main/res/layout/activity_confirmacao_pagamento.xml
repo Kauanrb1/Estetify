@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConfirmacaoPagamento">
+
+    <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/guideline_start"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_begin="24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="24dp" />
+
+    <ImageView
+        android:id="@+id/voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/voltar"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+    <TextView
+        android:id="@+id/forma_de_pagamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Forma de Pagamento"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/voltar"
+        app:layout_constraintTop_toBottomOf="@id/voltar"/>
+
+    <TextView
+        android:id="@+id/confirmacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_marginTop="24dp"
+        android:text="Confirmação"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/forma_de_pagamento"
+        app:layout_constraintEnd_toStartOf="@+id/efetuada"
+        app:layout_constraintTop_toBottomOf="@id/voltar"/>
+
+    <TextView
+        android:id="@+id/efetuada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="24dp"
+        android:text="Compra Efetuada"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+
+        app:layout_constraintTop_toBottomOf="@id/voltar"/>
+
+    <ImageView
+        android:id="@+id/empty_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/circulo"
+        app:layout_constraintEnd_toEndOf="@id/forma_de_pagamento"
+        app:layout_constraintStart_toStartOf="@id/forma_de_pagamento"
+        app:layout_constraintTop_toBottomOf="@id/forma_de_pagamento"/>
+
+    <ImageView
+        android:id="@+id/full_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/circulo_preenchido"
+        app:layout_constraintEnd_toEndOf="@id/confirmacao"
+        app:layout_constraintStart_toStartOf="@id/confirmacao"
+        app:layout_constraintTop_toBottomOf="@id/confirmacao"/>
+
+    <ImageView
+        android:id="@+id/empty_circle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/circulo"
+        app:layout_constraintEnd_toEndOf="@id/efetuada"
+        app:layout_constraintStart_toStartOf="@id/efetuada"
+        app:layout_constraintTop_toBottomOf="@id/efetuada"/>
+
+    <TextView
+        android:id="@+id/txt_forma_pagamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forma de pagamento: pix"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_continuar_pagamento"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/txt_local_envio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enviando para: Santa Catarina, Florianópolis"
+        android:layout_marginBottom="160dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_continuar_pagamento"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/txt_data_entrega"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data de entrega: 10/10/2022"
+        android:layout_marginBottom="136dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_continuar_pagamento"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/txt_valor_itens"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valor dos itens: R$ 100,00"
+        android:layout_marginBottom="112dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_continuar_pagamento"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/txt_valor_frete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valor do frete: R$ 10,00"
+        android:layout_marginBottom="88dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_continuar_pagamento"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        android:textSize="16sp"/>
+
+
+    <TextView
+        android:id="@+id/txt_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total: R$ 110,00"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_continuar_pagamento"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/btn_continuar_pagamento"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:backgroundTint="@color/verdePastel"
+        android:text="Continuar Pagamento"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

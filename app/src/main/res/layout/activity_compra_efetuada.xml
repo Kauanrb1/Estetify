@@ -7,4 +7,108 @@
     android:layout_height="match_parent"
     tools:context=".CompraEfetuada">
 
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="24dp" />
+
+
+    <TextView
+        android:id="@+id/forma_de_pagamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forma de Pagamento"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        android:layout_marginTop="80dp"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/confirmacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirmação"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/forma_de_pagamento"
+        app:layout_constraintEnd_toStartOf="@+id/efetuada"
+        android:layout_marginTop="80dp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/efetuada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Compra Efetuada"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        android:layout_marginTop="80dp"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/empty_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/circulo"
+        app:layout_constraintEnd_toEndOf="@id/forma_de_pagamento"
+        app:layout_constraintStart_toStartOf="@id/forma_de_pagamento"
+        app:layout_constraintTop_toBottomOf="@id/forma_de_pagamento"/>
+
+    <ImageView
+        android:id="@+id/full_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/circulo_preenchido"
+        app:layout_constraintEnd_toEndOf="@id/confirmacao"
+        app:layout_constraintStart_toStartOf="@id/confirmacao"
+        app:layout_constraintTop_toBottomOf="@id/confirmacao"/>
+
+    <ImageView
+        android:id="@+id/empty_circle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/circulo"
+        app:layout_constraintEnd_toEndOf="@id/efetuada"
+        app:layout_constraintStart_toStartOf="@id/efetuada"
+        app:layout_constraintTop_toBottomOf="@id/efetuada"/>
+
+    <TextView
+        android:id="@+id/compra_efetuada"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Compra Efetuada com Sucesso!"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        android:textSize="32sp"
+        />
+
+    <Button
+        android:id="@+id/btn_continuar_pagamento"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:backgroundTint="@color/verdePastel"
+        android:text="Continuar Pagamento"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
