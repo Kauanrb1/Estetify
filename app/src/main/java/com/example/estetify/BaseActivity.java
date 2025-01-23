@@ -54,8 +54,8 @@ public abstract class BaseActivity extends AppCompatActivity {
             }
             return true;
         } else if (itemId == R.id.cart) {
-            if (!(BaseActivity.this instanceof Notificacao)) {
-                Intent intent = new Intent(getApplicationContext(), Notificacao.class);
+            if (!(BaseActivity.this instanceof CarrinhoActivity)) {
+                Intent intent = new Intent(getApplicationContext(), CarrinhoActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0); // Sem animação
                 finish();
