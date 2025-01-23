@@ -69,6 +69,7 @@
 
 
     <HorizontalScrollView
+        android:id="@+id/saloesProximos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
@@ -83,50 +84,50 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginEnd="8dp"
                 android:padding="5dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/perfil" />
             <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginEnd="8dp"
                 android:padding="5dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/perfil" />
             <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginEnd="8dp"
                 android:padding="5dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/perfil" />
             <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginEnd="8dp"
                 android:padding="5dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/perfil" />
             <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginEnd="8dp"
                 android:padding="5dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/perfil" />
             <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginEnd="8dp"
                 android:padding="5dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/perfil" />
             <ImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginEnd="8dp"
                 android:padding="5dp"
                 android:scaleType="centerCrop"
@@ -143,7 +144,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/saloesProximos"
         app:layout_constraintVertical_bias="0.808">
 
         <LinearLayout
@@ -163,8 +164,8 @@
                 <!-- Imagem do perfil -->
                 <ImageView
                     android:id="@+id/profileImage"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_marginEnd="8dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/perfil" />
@@ -197,8 +198,8 @@
                 <!-- Imagem do perfil -->
                 <ImageView
                     android:id="@+id/profileImage1"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_marginEnd="8dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/perfil" />

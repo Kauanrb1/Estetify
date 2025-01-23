@@ -36,9 +36,6 @@
             android:name=".Localizacao"
             android:exported="false" />
         <activity
-            android:name=".Pesquisa"
-            android:exported="false" />
-        <activity
             android:name=".TelaPrincipal"
             android:exported="false" />
         <activity
