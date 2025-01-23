@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Forma de Pagamento"
+        android:text="@string/forma_de_pagamento"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@id/voltar"
         app:layout_constraintTop_toBottomOf="@id/voltar"/>
@@ -49,7 +49,7 @@
 
 
         android:layout_marginTop="24dp"
-        android:text="Confirmação"
+        android:text="@string/confirma_o"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@id/forma_de_pagamento"
         app:layout_constraintEnd_toStartOf="@+id/efetuada"
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
 
         android:layout_marginTop="24dp"
-        android:text="Compra Efetuada"
+        android:text="@string/compra_efetuada"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
 
@@ -115,7 +115,7 @@
             android:layout_height="64dp"
             android:layout_marginBottom="32dp"
             android:background="@android:color/darker_gray"
-            android:text="Pix"
+            android:text="@string/pix"
             android:textSize="16sp"/>
 
         <RadioButton
@@ -124,7 +124,7 @@
             android:layout_height="64dp"
             android:layout_marginBottom="32dp"
             android:background="@android:color/darker_gray"
-            android:text="Boleto"
+            android:text="@string/boleto"
             android:textSize="16sp"/>
 
         <RadioButton
@@ -135,7 +135,7 @@
             app:layout_constraintStart_toStartOf="@id/guideline_start"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"
             android:background="@android:color/darker_gray"
-            android:text="Cartão de Crédito"
+            android:text="@string/cart_o_de_cr_dito"
             android:textSize="16sp"/>
 
         <RadioButton
@@ -143,7 +143,7 @@
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:background="@android:color/darker_gray"
-            android:text="Cartão de Débito"
+            android:text="@string/cart_o_de_d_bito"
             android:textSize="16sp" />
     </RadioGroup>
 
@@ -152,7 +152,7 @@
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:backgroundTint="@color/verdePastel"
-        android:text="Continuar Pagamento"
+        android:text="@string/continuar_pagamento"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         android:textSize="16sp"

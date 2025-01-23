@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".CompraEfetuada">
 
 
@@ -27,7 +28,7 @@
         android:id="@+id/forma_de_pagamento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Forma de Pagamento"
+        android:text="@string/forma_de_pagamento"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
         android:layout_marginTop="80dp"
@@ -38,7 +39,7 @@
         android:id="@+id/confirmacao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Confirmação"
+        android:text="@string/confirma_o"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@id/forma_de_pagamento"
         app:layout_constraintEnd_toStartOf="@+id/efetuada"
@@ -50,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="Compra Efetuada"
+        android:text="@string/compra_efetuada"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         android:layout_marginTop="80dp"
@@ -68,21 +69,21 @@
         app:layout_constraintTop_toBottomOf="@id/forma_de_pagamento"/>
 
     <ImageView
-        android:id="@+id/full_circle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/circulo_preenchido"
-        app:layout_constraintEnd_toEndOf="@id/confirmacao"
-        app:layout_constraintStart_toStartOf="@id/confirmacao"
-        app:layout_constraintTop_toBottomOf="@id/confirmacao"/>
-
-    <ImageView
         android:id="@+id/empty_circle2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:src="@drawable/circulo"
+        app:layout_constraintEnd_toEndOf="@id/confirmacao"
+        app:layout_constraintStart_toStartOf="@id/confirmacao"
+        app:layout_constraintTop_toBottomOf="@id/confirmacao"/>
+
+    <ImageView
+        android:id="@+id/circulo_preenchido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/circulo_preenchido"
         app:layout_constraintEnd_toEndOf="@id/efetuada"
         app:layout_constraintStart_toStartOf="@id/efetuada"
         app:layout_constraintTop_toBottomOf="@id/efetuada"/>
@@ -91,13 +92,13 @@
         android:id="@+id/compra_efetuada"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Compra Efetuada com Sucesso!"
+        android:text="@string/compra_efetuada_com_sucesso"
         android:textAlignment="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
-        android:textSize="32sp"
+        android:textSize="24sp"
         />
 
     <Button
@@ -105,7 +106,7 @@
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:backgroundTint="@color/verdePastel"
-        android:text="Continuar Pagamento"
+        android:text="@string/continuar_pagamento"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         android:textSize="16sp"
